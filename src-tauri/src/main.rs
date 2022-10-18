@@ -39,6 +39,14 @@ fn main() -> wry::Result<()> {
     window.addEventListener('DOMContentLoaded', (event) => {
       const style = document.createElement('style');
       style.innerHTML = `
+        body {
+          padding-top: 30px;
+        }
+
+        footer .fix {
+          display: none;
+        }
+
         .panel.give_me .nav_view {
           top: 154px !important;
         }
@@ -134,7 +142,7 @@ fn main() -> wry::Result<()> {
         .with_titlebar_buttons_hidden(false)
         .with_title_hidden(true)
         .with_menu(menu_bar_menu)
-        .with_inner_size(wry::application::dpi::LogicalSize::new(1200.00, 728.00))
+        .with_inner_size(wry::application::dpi::LogicalSize::new(1300.00, 728.00))
         .build(&event_loop)
         .unwrap();
 
@@ -151,7 +159,7 @@ fn main() -> wry::Result<()> {
     };
 
     let _webview = WebViewBuilder::new(window)?
-        .with_url("https://weread.qq.com/")?
+        .with_url("https://www.lrts.me")?
         // .with_devtools(true)
         .with_initialization_script(script)
         .with_ipc_handler(handler)
